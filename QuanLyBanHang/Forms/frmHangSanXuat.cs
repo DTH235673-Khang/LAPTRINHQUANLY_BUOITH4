@@ -13,7 +13,7 @@ namespace QuanLyBanHang.Forms
 {
     public partial class frmHangSanXuat : Form
     {
-        QLBHDbContenxt context = new QLBHDbContenxt();  // Khởi tạo biến ngữ cảnh CSDL
+        QLBHDbContext context = new QLBHDbContext();  // Khởi tạo biến ngữ cảnh CSDL
         bool xuLyThem = false;  // Kiểm tra có nhấn vào nút Thêm hay không?
         int id;
         public frmHangSanXuat()

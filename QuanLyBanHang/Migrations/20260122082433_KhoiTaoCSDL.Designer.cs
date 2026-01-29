@@ -11,7 +11,7 @@ using QuanLyBanHang.Data;
 
 namespace QuanLyBanHang.Migrations
 {
-    [DbContext(typeof(QLBHDbContenxt))]
+    [DbContext(typeof(QLBHDbContext))]
     [Migration("20260122082433_KhoiTaoCSDL")]
     partial class KhoiTaoCSDL
     {

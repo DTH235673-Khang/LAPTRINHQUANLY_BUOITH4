@@ -10,7 +10,7 @@ using QuanLyBanHang.Data;
 
 namespace QuanLyBanHang.Migrations
 {
-    [DbContext(typeof(QLBHDbContenxt))]
+    [DbContext(typeof(QLBHDbContext))]
     partial class QLBHDbContenxtModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

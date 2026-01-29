@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace QuanLyBanHang.Data
 {
-    public class QLBHDbContenxt: DbContext
+    public class QLBHDbContext: DbContext
     {
         public DbSet<LoaiSanPham> LoaiSanPham { get; set; }
         public DbSet<HangSanXuat> HangSanXuat { get; set; }

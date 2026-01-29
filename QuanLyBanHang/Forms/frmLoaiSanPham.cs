@@ -14,7 +14,7 @@ namespace QuanLyBanHang.Forms
 {
     public partial class frmLoaiSanPham : Form
     {
-        QLBHDbContenxt context = new QLBHDbContenxt();
+        QLBHDbContext context = new QLBHDbContext();
         bool xuLyThem = false;
         int id;
         public frmLoaiSanPham()
