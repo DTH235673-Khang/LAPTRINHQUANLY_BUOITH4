@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             btnDoiAnh = new Button();
             btnXuat = new Button();
@@ -63,6 +63,7 @@
             SoLuong = new DataGridViewTextBoxColumn();
             DonGia = new DataGridViewTextBoxColumn();
             HinhAnh = new DataGridViewImageColumn();
+            btnXoayAnh = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picHinhAnh).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numDonGia).BeginInit();
@@ -73,6 +74,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnXoayAnh);
             groupBox1.Controls.Add(btnDoiAnh);
             groupBox1.Controls.Add(btnXuat);
             groupBox1.Controls.Add(btnNhap);
@@ -362,18 +364,18 @@
             // SoLuong
             // 
             SoLuong.DataPropertyName = "SoLuong";
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "N0";
-            SoLuong.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N0";
+            SoLuong.DefaultCellStyle = dataGridViewCellStyle3;
             SoLuong.HeaderText = "Số lượng";
             SoLuong.Name = "SoLuong";
             // 
             // DonGia
             // 
             DonGia.DataPropertyName = "DonGia";
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N0";
-            DonGia.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N0";
+            DonGia.DefaultCellStyle = dataGridViewCellStyle4;
             DonGia.HeaderText = "Đơn giá";
             DonGia.Name = "DonGia";
             // 
@@ -382,6 +384,16 @@
             HinhAnh.DataPropertyName = "HinhAnh";
             HinhAnh.HeaderText = "Hình ảnh";
             HinhAnh.Name = "HinhAnh";
+            // 
+            // btnXoayAnh
+            // 
+            btnXoayAnh.Location = new Point(679, 54);
+            btnXoayAnh.Name = "btnXoayAnh";
+            btnXoayAnh.Size = new Size(75, 23);
+            btnXoayAnh.TabIndex = 22;
+            btnXoayAnh.Text = "Xoay ảnh";
+            btnXoayAnh.UseVisualStyleBackColor = true;
+            btnXoayAnh.Click += btnXoayAnh_Click;
             // 
             // frmSanPham
             // 
@@ -438,5 +450,6 @@
         private DataGridViewTextBoxColumn SoLuong;
         private DataGridViewTextBoxColumn DonGia;
         private DataGridViewImageColumn HinhAnh;
+        private Button btnXoayAnh;
     }
 }

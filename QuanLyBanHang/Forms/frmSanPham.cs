@@ -109,10 +109,10 @@ namespace QuanLyBanHang.Forms
         {
             if (dataGridView.Columns[e.ColumnIndex].Name == "HinhAnh")
             {
-                if(e.Value==null)
+                if (e.Value == null)
                 {
                     e.Value = @"Z:\LAPTRINHQUANLY_BUOITH2\QuanLyBanHang\bin\Debug\net8.0-windows\hinhanh.jpg";
-                }    
+                }
                 Image image = Image.FromFile(Path.Combine(imagesFolder, e.Value.ToString()));
                 image = new Bitmap(image, 24, 24);
                 e.Value = image;
@@ -173,15 +173,15 @@ namespace QuanLyBanHang.Forms
                     SanPham sp = new SanPham();
                     // Tương tự với các form đã thực hiện
                     sp.LoaiSanPhamID = (int)cboLoaiSanPham.SelectedValue;
-                    sp.HangSanXuatID= (int)cboHangSanXuat.SelectedValue;
+                    sp.HangSanXuatID = (int)cboHangSanXuat.SelectedValue;
                     sp.TenSanPham = txtTenSanPham.Text;
                     sp.SoLuong = (int)numSoLuong.Value;
-                    sp.DonGia=(int)numDonGia.Value;
+                    sp.DonGia = (int)numDonGia.Value;
                     sp.HinhAnh = (string.IsNullOrEmpty(picHinhAnh.ImageLocation)
                         ? picHinhAnh.ImageLocation.ToString() : null);
                     context.SanPham.Add(sp);
                     context.SaveChanges();
-                    
+
                 }
                 else
                 {
@@ -190,7 +190,7 @@ namespace QuanLyBanHang.Forms
                     {
                         sp.LoaiSanPhamID = (int)cboLoaiSanPham.SelectedValue;
                         sp.HangSanXuatID = (int)cboHangSanXuat.SelectedValue;
-                        sp.TenSanPham= txtTenSanPham.Text;
+                        sp.TenSanPham = txtTenSanPham.Text;
                         sp.SoLuong = (int)numSoLuong.Value;
                         sp.DonGia = (int)numDonGia.Value;
                         sp.HinhAnh = (string.IsNullOrEmpty(picHinhAnh.ImageLocation)
@@ -226,11 +226,11 @@ namespace QuanLyBanHang.Forms
 
                 string newImage = fileName.GenerateSlug() + ext;
                 string fileSavePath = Path.Combine(imagesFolder, newImage);
-                using(var stream=new FileStream(fileSavePath, FileMode.Open, FileAccess.Read))
+                using (var stream = new FileStream(fileSavePath, FileMode.Open, FileAccess.Read))
                 {
-                    picHinhAnh.Image=Image.FromStream(stream);
+                    picHinhAnh.Image = Image.FromStream(stream);
                 }
-                
+
                 id = Convert.ToInt32(dataGridView.CurrentRow.Cells["ID"].Value);
                 SanPham sp = context.SanPham.Find(id);
                 sp.HinhAnh = fileName.GenerateSlug() + ext;
@@ -249,6 +249,17 @@ namespace QuanLyBanHang.Forms
                 dataGridView.DataSource = context.SanPham.Where(sp => sp.TenSanPham.Contains(txtTenSanPham.Text)).ToList();
                 BatTatChucNang(true);
             }
+        }
+
+        private void btnXoayAnh_Click(object sender, EventArgs e)
+        {
+            if(picHinhAnh.Image!=null)
+            {
+                Image img=picHinhAnh.Image;
+                img.RotateFlip(RotateFlipType.Rotate90FlipNone);
+                picHinhAnh.Image=img;
+                picHinhAnh.Refresh();
+            }    
         }
     }
 }
