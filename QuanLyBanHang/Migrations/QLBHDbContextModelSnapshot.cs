@@ -11,7 +11,7 @@ using QuanLyBanHang.Data;
 namespace QuanLyBanHang.Migrations
 {
     [DbContext(typeof(QLBHDbContext))]
-    partial class QLBHDbContenxtModelSnapshot : ModelSnapshot
+    partial class QLBHDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -85,8 +85,8 @@ namespace QuanLyBanHang.Migrations
                     b.Property<int>("SanPhamID")
                         .HasColumnType("int");
 
-                    b.Property<short>("SoLuongBan")
-                        .HasColumnType("smallint");
+                    b.Property<int>("SoLuongBan")
+                        .HasColumnType("int");
 
                     b.HasKey("ID");
 
