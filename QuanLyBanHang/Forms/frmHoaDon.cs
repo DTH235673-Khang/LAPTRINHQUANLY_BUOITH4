@@ -34,7 +34,7 @@ namespace QuanLyBanHang.Forms
                 HoVaTenKhachHang = r.KhachHang.HoVaTen,
                 NgayLap = r.NgayLap,
                 GhiChuHoaDon = r.GhiChuHoaDon,
-                TongTienHoaDon = r.HoaDonChiTiet.Sum(r => (int)(r.SoLuongBan) * (int)(r.DonGiaBan)),
+                TongTienHoaDon = r.HoaDonChiTiet.Sum(r => r.SoLuongBan * r.DonGiaBan),
                 XemChiTiet = "Xem chi tiết"
             }).ToList();
             dataGridView.DataSource = hd;
@@ -61,14 +61,14 @@ namespace QuanLyBanHang.Forms
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string hd = dataGridView.SelectedRows[0].ToString();
-            if (hd.IsNullOrEmpty())
+            id = Convert.ToInt32(dataGridView.CurrentRow.Cells["ID"].Value.ToString());
+            if (id.ToString().IsNullOrEmpty())
             {
                 MessageBox.Show("Vui lòng chọn dòng cần xóa!", "Thông báo", MessageBoxButtons.OK);
             }
             else
             {
-                if (MessageBox.Show("Xác nhận xóa hóa đơn " + hd + "?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==
+                if (MessageBox.Show("Xác nhận xóa hóa đơn " + id + "?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==
                 DialogResult.Yes)
                 {
                     id = Convert.ToInt32(dataGridView.CurrentRow.Cells["ID"].Value.ToString());
@@ -87,6 +87,11 @@ namespace QuanLyBanHang.Forms
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
