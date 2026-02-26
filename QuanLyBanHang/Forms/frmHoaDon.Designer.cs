@@ -176,7 +176,6 @@
             btnThoat.TabIndex = 5;
             btnThoat.Text = "Thoát";
             btnThoat.UseVisualStyleBackColor = true;
-            btnThoat.Click += btnThoat_Click;
             // 
             // btnTimKiem
             // 
@@ -188,7 +187,6 @@
             btnTimKiem.TabIndex = 6;
             btnTimKiem.Text = "Tìm kiếm...";
             btnTimKiem.UseVisualStyleBackColor = true;
-            btnTimKiem.Click += btnTimKiem_Click;
             // 
             // btnXuat
             // 
