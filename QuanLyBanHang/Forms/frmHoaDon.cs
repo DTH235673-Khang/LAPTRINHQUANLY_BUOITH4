@@ -84,12 +84,6 @@ namespace QuanLyBanHang.Forms
 
         }
 
-        private void btnXuat_Click(object sender, EventArgs e)
-        {
-         
-            }
-
-
-        }
+       
     }
 }
